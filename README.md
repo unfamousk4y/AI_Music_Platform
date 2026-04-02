@@ -18,10 +18,10 @@ A full-stack AI-powered music platform that accepts audio file uploads and autom
 | Cloud | AWS EC2 (Ubuntu Linux) |
 | CI/CD | GitHub Actions |
 
-##Project Status
+## Project Status
 Currently in active development. Following an 8-phase build plan from local setup through full AWS deployment and CI/CD automation.
 
-##Roadmap
+## Roadmap
 - [x] Phase 1 — Environment setup & repo
 - [ ] Phase 2 — Java Spring Boot REST API + Auth
 - [ ] Phase 3 — Python AI microservice (audio analysis)
