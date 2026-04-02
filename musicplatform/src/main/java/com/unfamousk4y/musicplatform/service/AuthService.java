@@ -27,7 +27,7 @@ public class AuthService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         userRepository.save(user);
         String token = jwtUtil.generateToken(user.getEmail());
-        return new AuthResponse(token, user.getUsername());
+        return new AuthResponse(token, user.getUsername(), user.getId());
     }
 
     public AuthResponse login(LoginRequest request) {
@@ -37,6 +37,6 @@ public class AuthService {
             throw new RuntimeException("Invalid password");
         }
         String token = jwtUtil.generateToken(user.getEmail());
-        return new AuthResponse(token, user.getUsername());
+        return new AuthResponse(token, user.getUsername(), user.getId());
     }
 }
