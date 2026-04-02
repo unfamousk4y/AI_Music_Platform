@@ -23,7 +23,7 @@ setError('Invalid email or password');
 return (
 <div className="center">
 <div className="card" style={{ width: '400px' }}>
-<h1 style={{ marginBottom: '8px', fontSize: '28px' }}>🎵 AI Music</h1>
+<h1 style={{ marginBottom: '8px', fontSize: '28px' }}>🎵Unfamous AI Music</h1>
 <p style={{ color: '#888', marginBottom: '24px' }}>Sign in to your account</p>
 
 {error && <p style={{ color: '#ff4d4d', marginBottom: '12px' }}>{error}</p>}

@@ -44,8 +44,8 @@ setUploading(false);
 
 return (
 <div style={{ maxWidth: '800px', margin: '0 auto', padding: '40px 20px' }}>
-<h1 style={{ fontSize: '28px', marginBottom: '8px' }}>🎵 AI Music Platform</h1>
-<p style={{ color: '#888', marginBottom: '32px' }}>Upload a song and let AI analyze its mood</p>
+<h1 style={{ fontSize: '28px', marginBottom: '8px' }}>🎵 Unfamous AI Music Platform 🎵</h1>
+<p style={{ color: '#888', marginBottom: '32px' }}>Upload a song and let AI analyze its mood!</p>
 
 <div className="card" style={{ marginBottom: '32px' }}>
 <h2 style={{ marginBottom: '16px' }}>Upload a Song</h2>
