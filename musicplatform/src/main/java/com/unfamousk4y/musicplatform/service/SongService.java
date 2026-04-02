@@ -1,5 +1,12 @@
 package com.unfamousk4y.musicplatform.service;
 
+import org.springframework.web.client.RestTemplate;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.*;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import java.util.Map;
+
 import com.unfamousk4y.musicplatform.model.Song;
 import com.unfamousk4y.musicplatform.model.User;
 import com.unfamousk4y.musicplatform.repository.SongRepository;
@@ -43,7 +50,19 @@ public class SongService {
         song.setTitle(title);
         song.setFilePath(filePath);
         song.setUser(user);
-        return songRepository.save(song);
+        Song savedSong = songRepository.save(song);
+
+        Map<String, Object> analysis = analyzeAudio(filePath);
+        if (analysis != null) {
+            savedSong.setMood((String) analysis.get("mood"));
+            savedSong.setTempo(((Number) analysis.get("tempo")).doubleValue());
+            savedSong.setEnergy(((Number) analysis.get("energy")).doubleValue());
+            songRepository.save(savedSong);
+        }
+
+        return savedSong;
+
+
     }
 
     public List<Song> getSongsByUser(Long userId) {
@@ -54,5 +73,25 @@ public class SongService {
         return songRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Song not found"));
     }
+    private Map<String, Object> analyzeAudio(String filePath) {
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+
+            MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
+            body.add("file", new FileSystemResource(filePath));
+
+            HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
+            ResponseEntity<Map> response = restTemplate.postForEntity(
+                    "http://localhost:8001/predict", requestEntity, Map.class);
+
+            return response.getBody();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+
 }
 
