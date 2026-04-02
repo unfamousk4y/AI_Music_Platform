@@ -10,27 +10,30 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/songs")
-
 public class SongController {
 
     @Autowired
     private SongService songService;
 
     @PostMapping("/upload")
-    public ResponseEntity<Song> uploadSong(
+    public ResponseEntity<Object> uploadSong(
             @RequestParam("file") MultipartFile file,
             @RequestParam("title") String title,
-            @RequestParam("userId") Long userId ) {
-        return ResponseEntity.ok(songService.uploadSong(file, title, userId));
+            @RequestParam("userId") Long userId) {
+        try {
+            return ResponseEntity.ok(songService.uploadSong(file, title, userId));
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
+
     @GetMapping
     public ResponseEntity<List<Song>> getSongs(@RequestParam Long userId) {
         return ResponseEntity.ok(songService.getSongsByUser(userId));
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<Song> getSong(@PathVariable Long id) {
         return ResponseEntity.ok(songService.getSongById(id));
     }
-
-
 }

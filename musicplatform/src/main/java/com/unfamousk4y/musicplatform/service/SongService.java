@@ -21,6 +21,11 @@ public class SongService {
     private UserRepository userRepository;
 
     public Song uploadSong(MultipartFile file, String title, Long userId) {
+
+        String originalFilename = file.getOriginalFilename();
+        if (originalFilename == null || !originalFilename.matches(".*\\.(mp3|wav|flac|ogg|m4a)$")) {
+            throw new RuntimeException("Invalid file type. Only audio files are allowed.");
+        }
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
