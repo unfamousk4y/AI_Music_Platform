@@ -37,4 +37,7 @@ public class Song {
     public User getUser() {return user;}
     public void setUser(User user) {this.user = user;}
 
+    public String getFilePath() {return filePath;}
+    public void setFilePath(String filePath) {this.filePath = filePath;}
+
 }
