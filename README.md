@@ -23,7 +23,7 @@ Currently in active development. Following an 8-phase build plan from local setu
 
 ## Roadmap
 - [x] Phase 1 — Environment setup & repo
-- [ ] Phase 2 — Java Spring Boot REST API + Auth
+- [x] Phase 2 — Java Spring Boot REST API + Auth
 - [ ] Phase 3 — Python AI microservice (audio analysis)
 - [ ] Phase 4 — Java ↔ Python integration
 - [ ] Phase 5 — React frontend
