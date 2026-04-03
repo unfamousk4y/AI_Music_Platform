@@ -31,4 +31,5 @@ jobs:
             
             
             pkill -f musicplatform || true
-            java -jar target/musicplatform-0.0.1-SNAPSHOT.jar &
+            nohup java - jar musicplatform/target/musicplatform-0.0.1-SNAPSHOT.jar > /dev/null 2>&1 &
+            disown
