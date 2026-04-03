@@ -9,7 +9,7 @@ const [error, setError] = useState('');
 
 const handleRegister = async () => {
 try {
-const res = await axios.post('http://localhost:8080/api/auth/register', {
+const res = await axios.post('http://3.143.251.215:8080/api/auth/register', {
 username,
 email,
 password

@@ -10,7 +10,7 @@ const [message, setMessage] = useState('');
 
 const fetchSongs = async () => {
 try {
-const res = await axios.get(`http://localhost:8080/api/songs?userId=${userId}`);
+const res = await axios.get(`http://3.143.251.215:8080/api/songs?userId=${userId}`);
 setSongs(res.data);
 } catch (err) {
 console.error(err);
@@ -31,7 +31,7 @@ formData.append('title', title);
 formData.append('userId', userId);
 
 try {
-await axios.post('http://localhost:8080/api/songs/upload', formData);
+await axios.post('http://3.143.251.215:8080/api/songs/upload', formData);
 setMessage('Upload successful!');
 setTitle('');
 setFile(null);
