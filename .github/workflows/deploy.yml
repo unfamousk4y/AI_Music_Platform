@@ -28,7 +28,7 @@ jobs:
           script: |
             cd ~/AI_Music_Platform
             git pull
-            cd musicplatform
-            ./mvnw package -DskipTests
+            
+            
             pkill -f musicplatform || true
             java -jar target/musicplatform-0.0.1-SNAPSHOT.jar &
