@@ -27,6 +27,6 @@ Currently in active development. Following an 8-phase build plan from local setu
 - [x] Phase 3 — Python AI microservice (audio analysis)
 - [x] Phase 4 — Java ↔ Python integration
 - [x] Phase 5 — React frontend
-- [ ] Phase 6 — AWS deployment (EC2, RDS, S3)
-- [ ] Phase 7 — CI/CD pipeline (GitHub Actions)
+- [x] Phase 6 — AWS deployment (EC2, RDS, S3)
+- [x] Phase 7 — CI/CD pipeline (GitHub Actions)
 - [ ] Phase 8 — Polishing and prep
