@@ -8,7 +8,7 @@
 
 A full-stack AI-powered music platform that accepts audio file uploads and automatically analyzes mood, tempo, and energy using a Python microservice. Built with a Java Spring Boot REST API, PostgreSQL persistence, AWS cloud infrastructure, and a React frontend. Deployed end-to-end with an automated CI/CD pipeline.
 
-**Live Demo:** http://3.143.251.215
+**Demo Video:** [https://www.loom.com/share/eda68832a91c49dea3c01fc0947772f3]
 
 React Frontend (Nginx, port 80) -> Java SpringBoot API (port 8080) -> PostgreSQL Database -> Python FastAPI AI Service (port 8001) -> Librosa Audio Analysis
 
