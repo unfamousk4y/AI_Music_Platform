@@ -28,8 +28,4 @@ jobs:
           script: |
             cd ~/AI_Music_Platform
             git pull
-            
-            
-            pkill -f musicplatform || true
-            nohup java - jar musicplatform/target/musicplatform-0.0.1-SNAPSHOT.jar > /dev/null 2>&1 &
-            disown
+            sudo systemctl restart musicplatform
