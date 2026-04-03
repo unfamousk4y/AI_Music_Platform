@@ -31,8 +31,8 @@ React Frontend (Nginx, port 80) -> Java SpringBoot API (port 8080) -> PostgreSQL
 | CI/CD | GitHub Actions |
 
 ## Project Status
-Currently in active development. Following an 8-phase build plan from local setup through full AWS deployment and CI/CD automation.
-
+Currently Completed. Followed an 8-phase build plan from local setup through full AWS deployment and CI/CD automation.
+Will revisit for optimized AI Integration.
 ## Roadmap
 - [x] Phase 1 — Environment setup & repo
 - [x] Phase 2 — Java Spring Boot REST API + Auth
